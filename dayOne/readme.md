@@ -15,17 +15,17 @@
 |     11      | LowerTriangularMatrix |
 |     12      | CommandLineArguments  |
 |     13      | CalculateResult       |
-|     14      |                       |
-|     15      |                       |
+|     14      | Checking2             |
+|     15      | Numbers               |
 |     16      | NumberOccurance       |
 |     17      | Checking              |
-|     18      |                       |
+|     18      | NumberToWords         |
 |     19      | TwoDReverse           |
 |     20      | TwoDMaximum           |
-|     21      |                       |
-|     22      |                       |
-|     23      |                       |
-|     24      |                       |
-|     25      |                       |
-|     26      |                       |
-|     27      |                       |
+|     21      | DaysOfMonth           |
+|     22      | ClassMembers          |
+|     23      | ProtectedData         |
+|     24      | QuadraticCalculator   |
+|     25      | FindResult1           |
+|     26      | sample                |
+|     27      | MoneyCalculation      |
