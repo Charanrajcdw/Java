@@ -10,7 +10,7 @@ public class Numbers {
 			return true;
 		if(inputNumber%2==0||inputNumber%3==0)
 			return false;
-		for(int i=5;i*i<=inputNumber/2;i++)
+		for(int i=5;i*i<=inputNumber;i++)
 			if(inputNumber%i==0)
 				return false;
 		return true;
