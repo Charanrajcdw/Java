@@ -26,4 +26,5 @@ public class ConstructorException{
 
 //Base constructor...
 //Exception in thread "main" java.lang.Exception: Exception in base class
-//base class exception is not passed to derived class
+//base class exception is thrown to derived class 
+//but cannot be handled since super() must be first line in the method
