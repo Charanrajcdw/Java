@@ -9,22 +9,17 @@ class Base{
 
 class Derived extends Base{
 	public Derived() throws Exception{
-		try{
-			Base b=new Base();
-		}catch(Exception e) {
-			System.out.println(e);
-		}
+		super();
 		System.out.println("Derived constructor...");
 	}
 }
 
 public class ConstructorException{
-	public static void main(String[] args) throws Exception{
-		Derived derived=new Derived();			
+	public static void main(String[] args){
+		try {
+			Derived derived=new Derived();						
+		}catch(Exception exception) {
+			System.out.println(exception.getMessage());
+		}
 	}
 }
-
-//Base constructor...
-//Exception in thread "main" java.lang.Exception: Exception in base class
-//base class exception is thrown to derived class 
-//but cannot be handled since super() must be first line in the method

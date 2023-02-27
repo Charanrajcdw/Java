@@ -1,37 +1,37 @@
 package dayFour;
 
 abstract class InputHandler{
-	public abstract void handle(NegativeNumberException nne);
-	public abstract void handle(OutOfRangeException ore); 
+	public abstract void handle(NegativeNumberException exception);
+	public abstract void handle(OutOfRangeException exception); 
 }
 
 class InputHandlerImpl extends InputHandler{
 	@Override
-	public void handle(NegativeNumberException nne) {
+	public void handle(NegativeNumberException exception) {
 		System.out.println("Enter a positive number...");
 	}
 	@Override
-	public void handle(OutOfRangeException ore) {
+	public void handle(OutOfRangeException exception) {
 		System.out.println("Enter a number between 1 and 100...");
 	}
 }
 
 public abstract class InputException extends Exception{
-	public InputException(String msg) {
-		super(msg);
+	public InputException(String messageValue) {
+		super(messageValue);
 	}
 	public abstract void visit();
 }
 
 class NegativeNumberException extends InputException{
-	String msg;
-	public NegativeNumberException(String msg) {
-		super(msg);
-		this.msg=msg;
+	String messageValue;
+	public NegativeNumberException(String messageValue) {
+		super(messageValue);
+		this.messageValue=messageValue;
 	}
 	@Override
 	public String toString() {
-		return msg;
+		return messageValue;
 	}	
 	@Override
 	public void visit() {
@@ -40,14 +40,14 @@ class NegativeNumberException extends InputException{
 }
 
 class OutOfRangeException extends InputException{
-	String msg;
-	public OutOfRangeException(String msg) {
-		super(msg);
-		this.msg=msg;
+	String messageValue;
+	public OutOfRangeException(String messageValue) {
+		super(messageValue);
+		this.messageValue=messageValue;
 	}
 	@Override
 	public String toString() {
-		return msg;
+		return messageValue;
 	}	
 	@Override
 	public void visit() {

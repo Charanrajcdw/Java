@@ -8,11 +8,14 @@ public class sample{
 	public void mth2() throws Exception {
 		try {
 			throw new Exception("custom exception");
-//			return;
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
 		}
 		finally {
 			System.out.println("finally-mth2");
 		}
+		System.out.println("method 2...");
 	}
 	public static void main(String[] args) throws Exception {
 		sample s=new sample();
@@ -26,3 +29,6 @@ public class sample{
 //after adding exception
 //finally-mth2
 //Exception in thread "main" java.lang.Exception: custom exception
+
+//after adding catch
+//the code after try catch executes without program stopping
