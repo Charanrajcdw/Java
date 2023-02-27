@@ -25,22 +25,23 @@ public class InventorySystem {
 }
 
 class Inventory{
-	boolean flag=false;
+//	boolean flag=false;
+	int item=0;
 	synchronized public void produce() {
-		if(flag) {
+		if(item==1) {
 			try{wait();}catch(Exception e) {}
 		}
-		System.out.println("item produced....");
-		flag=true;
+		item=1;
+		System.out.println("items in the inventory....."+item);
 		notify();
 	}
 	
 	synchronized public void consume() {
-		if(!flag) {
+		if(item==0) {
 			try{wait();}catch(Exception e) {}
 		}
-		System.out.println("item consumed.....");
-		flag=false;
+		item=0;
+		System.out.println("items in the inventory..."+item);
 		notify();
 	}
 }
