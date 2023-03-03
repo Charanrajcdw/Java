@@ -6,7 +6,7 @@ import java.util.Random;
 interface Player {
 	public void setWeapon(String weapon);
 
-	public void mission();
+	public void printMission();
 }
 
 class Terrorist implements Player {
@@ -23,7 +23,7 @@ class Terrorist implements Player {
 	}
 
 	@Override
-	public void mission() {
+	public void printMission() {
 		System.out.println("Terrorist [task=" + task + ", weapon=" + weapon + "]");
 	}
 }
@@ -42,7 +42,7 @@ class CounterTerrorist implements Player {
 	}
 
 	@Override
-	public void mission() {
+	public void printMission() {
 		System.out.println("CounterTerrorist [task=" + task + ", weapon=" + weapon + "]");
 	}
 }
@@ -69,13 +69,13 @@ public class Flyweight {
 	private static String[] playerType = { "Terrorist", "CounterTerrorist" };
 	private static String[] weapons = { "AK-47", "M134", "M16A4", "MK-22" };
 
-	public static String getRandPlayerType() {
+	public static String getRandomPlayerType() {
 		Random random = new Random();
 		int randomInt = random.nextInt(playerType.length);
 		return playerType[randomInt];
 	}
 
-	public static String getRandWeapon() {
+	public static String getRandomWeapon() {
 		Random random = new Random();
 		int randomInt = random.nextInt(weapons.length);
 		return weapons[randomInt];
@@ -83,10 +83,9 @@ public class Flyweight {
 
 	public static void main(String[] args) {
 		for (int i = 0; i < 10; i++) {
-			Player player = PlayerFactory.getPlayer(getRandPlayerType());
-			player.setWeapon(getRandWeapon());
-			player.mission();
+			Player player = PlayerFactory.getPlayer(getRandomPlayerType());
+			player.setWeapon(getRandomWeapon());
+			player.printMission();
 		}
-
 	}
 }

@@ -36,14 +36,14 @@ interface Color {
 	public String getColor();
 }
 
-class Red implements Color{
+class Red implements Color {
 	@Override
 	public String getColor() {
 		return "red color";
 	}
 }
 
-class Blue implements Color{
+class Blue implements Color {
 	@Override
 	public String getColor() {
 		return "blue color";
@@ -52,8 +52,8 @@ class Blue implements Color{
 
 public class Bridge {
 	public static void main(String[] args) {
-		Shape redSqaure=new Square(new Red());
-		Shape blueCircle=new Circle(new Blue());
+		Shape redSqaure = new Square(new Red());
+		Shape blueCircle = new Circle(new Blue());
 		redSqaure.draw();
 		blueCircle.draw();
 	}

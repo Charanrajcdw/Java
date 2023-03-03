@@ -5,37 +5,37 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class Memento {
-	public static void main(String[] args)throws Exception {
-		Vehicle bike=new Vehicle();
-		System.out.println("Petrol before trip...:"+bike.petrol);
+	public static void main(String[] args) throws Exception {
+		Vehicle bike = new Vehicle();
+		System.out.println("Petrol before trip...:" + bike.petrol);
 		new WriteObject().writeObject(bike);
 		System.out.println("Going for a long trip...");
 		bike.longDrive();
-		System.out.println("Petrol after trip..:"+bike.petrol);
+		System.out.println("Petrol after trip..:" + bike.petrol);
 		System.out.println("Retrieving object from saved file...");
-		bike=new ReadObject().readObject("bike.dat");
-		System.out.println("Petrol in the bike...:"+bike.petrol);
+		bike = new ReadObject().readObject("bike.dat");
+		System.out.println("Petrol in the bike...:" + bike.petrol);
 	}
 }
-class Vehicle implements Serializable{
-	int petrol=50;
+
+class Vehicle implements Serializable {
+	int petrol = 50;
+
 	void longDrive() {
-		petrol-=30;
+		petrol -= 30;
 	}
 }
+
 class WriteObject {
-	public void writeObject(Vehicle bike) throws Exception{
-		ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream("bike.dat"));
-		oos.writeObject(bike);
+	public void writeObject(Vehicle bike) throws Exception {
+		ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("bike.dat"));
+		objectOutputStream.writeObject(bike);
 	}
 }
+
 class ReadObject {
-	public Vehicle readObject(String filename) throws Exception{
-		ObjectInputStream ois=new ObjectInputStream(new FileInputStream(filename));
-		return (Vehicle)ois.readObject();
+	public Vehicle readObject(String fileName) throws Exception {
+		ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(fileName));
+		return (Vehicle) objectInputStream.readObject();
 	}
 }
-
-
-
-
